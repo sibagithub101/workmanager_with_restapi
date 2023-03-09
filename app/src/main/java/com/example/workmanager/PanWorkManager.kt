@@ -9,14 +9,17 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class PanWorkManager(private val context: Context, params:WorkerParameters): Worker(context,params) {
+class PanWorkManager(private val context: Context, params: WorkerParameters) :
+    Worker(context, params) {
     override fun doWork(): Result {
         Log.e(TAG, "WorkerCalled............!!!")
         val repo = (context as MyApplication).repo
         val data = inputData.getString("data")
+        val data2 = inputData.getString("data2")
+        Log.e(TAG, "getInputedData:" + data.toString() + " - " + data2.toString())
         CoroutineScope(Dispatchers.IO).launch {
             repo.panAPiCall(PanRequest(data))
         }
         return Result.success()
     }
-    }
+}

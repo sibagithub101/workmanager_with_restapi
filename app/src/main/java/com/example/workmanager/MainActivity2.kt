@@ -21,6 +21,7 @@ class MainActivity2 : AppCompatActivity() {
     private fun setUpWorker() {
         val inputData = Data.Builder()
             .putString("data", "ATEPJ9091M")
+            .putString("data2","siba")
             .build()
 
         val constraint = Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
