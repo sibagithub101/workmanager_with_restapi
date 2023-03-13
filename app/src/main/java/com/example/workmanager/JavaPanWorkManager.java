@@ -6,8 +6,6 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
-
-
 public class JavaPanWorkManager extends Worker {
     Context context;
     WorkerParameters parameters;
